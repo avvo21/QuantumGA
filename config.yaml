@@ -1,0 +1,24 @@
+# === Genetic Algorithm ===
+population_size: 50               # number of individuals in population (↑ = more diversity, but slower)
+num_generations: 100              # maximum number of generations (↑ = more time to converge)
+n_children: 20                     # number of children per generation (↑ = more exploration)
+
+# === Mutation ===
+p_mut_init: 0.7                   # initial mutation probability (↑ = more exploration)
+mutation_decay: 0.99              # exponential decay rate (↑ = mutation persists longer)
+mutation_type: "gaussian"         # mutation type: "gaussian" (uses sigma), "random" (uniform random)
+mutation_sigma: 0.3               # standard deviation of Gaussian noise (↑ = larger mutations) [only for gaussian]
+exponential_weight: 0.5          # w parameter for exponential selection (↑ = less elitist, more random)
+selection_type: "exponential"     # selection type "linear" (balanced), "exponential" (controllable)
+use_steady_state: false            # enable steady-state selection (true = more elitist, false = more explorative)
+
+# === Circuit ===
+theta_dimension: 16                # total number of parameters in theta vector (↑ = more complex circuit)
+theta_range: [-3.141592654, 3.141592654] # allowed range for each theta parameter (parameter range)
+n_shots: 4096                     # number of quantum measurements per sample (↑ = less noise, but slower)
+
+# === Dataset ===
+n_params: 1250                    # number of parameters in dataset (↑ = larger dataset)
+circle_radius: 0.5                # radius of circle for dataset (↑ = more difficult problem)
+dataset_noise: 0.00               # noise level in dataset (↑ = more difficult problem)
+train_test_split: 0.80            # training set proportion (↓ = more data for training)
